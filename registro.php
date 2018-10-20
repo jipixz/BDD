@@ -1,40 +1,32 @@
-<?php session_start();
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo de interaccion con DB</title>
+<style type="text/css">
+@import url("css/mycss.css");
+</style>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
 
-require 'admin/config.php';
-require 'functions.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $correo = $_POST['correo'];
-    $password = $_POST['password'];
-    $matricula = $_POST['matricula'];
-    $rol = $_POST['rol'];
+  <div style="margin-right: 20%;">
 
-    $errores = '';
+      <ul class="nav nav-pills">
+        <li><a href="usuarios.php" class="active">Registrate</a></li>
 
-    if (empty($nombre) || empty($apellido) || empty($usuario) || empty($password) || empty($matricula) || empty($rol)) {
-      $errores .= '<li class="error">Relleno todos los campos</li>';
-    }else {
-      //validar Usuario no exista
-      $conexion = conexion($bd_config);
-      $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
-      $statement-> execute([
-        ':correo' => $correo
-      ]);
-      $reultado = $statement->fetch();
-      if ($resultado != false) {
-        $errores .= '<li class="error">usuario existente</li>';
-      }
-    }
+      </ul>
 
-    if ($errores == '') {
-      $conexion = conexion($bd_config);
-    //  $statement = $conexion->prepare()
-    }
-
-}
-require 'views/registro.view.php';
+    </div>
 
 
 
-?>
+</body>
+</html>
