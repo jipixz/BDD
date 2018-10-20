@@ -7,17 +7,18 @@
 
 body {
   font-family: sans-serif;
+  color:   #ffffff;
 }
 
 .bg-image {
-  background-image: url('../img/qlo.png');
+  background-image: url('../images/qlo.png');
   height: 100vh;
 }
 
 .container {
   width: 90%;
   max-width: 1070px;
-  margin: auto;
+
 }
 
 form {
@@ -82,5 +83,5 @@ form {
   text-align: center;
   margin: auto;
   display: block;
-  color: #00e676;
+  color:  #000000;
 }

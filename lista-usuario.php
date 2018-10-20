@@ -38,27 +38,11 @@ function conexion ($bd_config){
       <th class="pas-basic">Apellido</th>
       <th class="pas-basic">Correo</th>
       <th class="pas-basic">Matricula</th>
-      <th class="pas-basic">Tipo de usuario</th>
 
 
     </tr>
     <?php
 
-        $query = "SELECT usuarios.nombre, usuarios.apellidos, usuarios.correo, usuarios.matricula, tipo_de_usuario.tipo_de_usuario
-                  FROM usuarios usuarios
-                  INNER JOIN tipo_de_usuario tipo_de_usuario ON usuarios.id_tipo_de_usuario = tipo_de_usuario.id_tipo_de_usuario";
-        $consulta=$conexion->query($query)
-        while ($fila=$consulta->fetch(PDO::FETCH_ASSOC)) {
-          echo '
-          <tr>
-          <td>'.$fila['nombre'].'</td>
-          <td>'.$fila['apellidos'].'</td>
-          <td>'.$fila['correo'].'</td>
-          <td>'.$fila['matricula'].'</td>
-          <td>'.$fila['tipo_de_usuario'].'</td>
-          </tr>
-          ';
-        }
 
 
     ?>
