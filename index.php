@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inicio de Sesion</title>
-<style type="text/css">
-@import url("css/mycss.css");
-</style>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="css/style.css">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de sesión</title>
+  <style type="text/css">
+  @import url("css/mycss.css");
+  </style>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-<body class="bg-image">
-<div class="todo">
 
-<//div id="cabecera">
-<//img src="images/swirl.png" width="1188" id="img1">
-  <///div>
-
+<body class="bg-image img-responsive">
   <div id="contenido">
-<h2 class="container" align="center">Reserva Laboratorios</h2>
-    <div id="login" style="width: 200px; margin: auto;">
+    <h1 class="titulo" align="center">Reserva de Laboratorios</h1>
+    <div id="login sesion">
       <form class="form-signin" method="POST" action="login.php">
+        <i class="fas fa-user fa-2x iconos"></i>
+        <label for="inputEmail" class="letras">Usuario</label>
+        <input type="text" id="inputUsuario" name="inputUsuario" class="form-control input-lg" placeholder="Ingrese su usuario" required autofocus>
 
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputUsuario" name="inputUsuario" class="form-control" placeholder="Nombre de usuario" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
+        <i class="fas fa-lock fa-2x iconos"></i>
+        <label for="inputPassword" class="inputbox letras" >Contraseña</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control input-lg" placeholder="Ingrese su contraseña" required>
+
         <div class="checkbox">
-        <button class="btn btn-flat-green" type="submit">Iniciar Sesion</button>
+          <button class="btn btn-success btn-lg" type="submit">Iniciar sesión</button>
         </div>
 
+        <div class="registrate">
+          <a class="btn btn-primary registro btn-lg" href="registro_datos.php">Regístrate</a>
+        </div>
       </form>
-
     </div>
-
-</div>
-
-<a href="registro_datos.php" class="btn login-link">Registrate</a>
+  </div>
 </body>
 </html>

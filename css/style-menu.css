@@ -1,0 +1,28 @@
+th, td{
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla{
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.navbar{
+    font-size: 2rem;
+}
+
+.right{
+    padding-right: 3rem;
+}
+
+.left{
+    padding-left: 3rem;
+}
+
+.text{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #080808;
+}

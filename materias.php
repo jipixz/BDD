@@ -17,12 +17,7 @@
 @import url("css/mycss.css");
 </style>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<link rel="stylesheet" href="css/style-menu.css" type="text/css">
 </head>
 <body>
 <div class="todo">
@@ -34,13 +29,12 @@
   <div id="contenido">
     <?php include'navbar.php'; ?>
 
-  	<table style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
+  	<table class="table-striped table-bordered tabla">
   		<thead>
-  			<th>Nombre</th>
-  			<th>Clave</th>
-  			<th>Status</th>
-  			<th></th>
-  			<th> <a href="añadir_materia.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
+  			<th class="tabla">Nombre</th>
+  			<th class="tabla">Clave</th>
+  			<th class="tabla">Status</th>
+  			<th class="tabla"> <a href="añadir_materia.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
   		</thead>
 
       <?php
@@ -51,11 +45,11 @@
 
       ?>
 			  <tr>
-			  	 <td> <?php echo $filas['nombre']?>  </td>
-			     <td> <?php echo $filas['clave']?> </td>
-			     <td> <?php echo $filas['id_estatus']?> </td>
-			     <td>  <a href='editar_materia.php?usr=<?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>
-			     <td> <a href='eliminar_materia.php?usr= <?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-danger'>Eliminar</button></a> </td>
+			  	 <td class='tabla'> <?php echo $filas['nombre']?>  </td>
+			     <td class='tabla'> <?php echo $filas['clave']?> </td>
+			     <td class='tabla'> <?php echo $filas['id_estatus']?> </td>
+			     <td class='tabla'>  <a href='editar_materia.php?usr=<?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>
+			     <td class='tabla'> <a href='eliminar_materia.php?usr= <?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-danger'>Eliminar</button></a> </td>
 			  </tr>
       <?php
         }
