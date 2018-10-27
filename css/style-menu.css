@@ -26,3 +26,7 @@ th, td{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #080808;
 }
+
+.navbar-toggler{
+    background-color: black;
+}

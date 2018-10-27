@@ -1,47 +1,50 @@
 <?php
   session_start();
 
-  if ($_SESSION['nombre'] != 'root')
+/*  if ($_SESSION['nombre'] != 'root')
   {
     echo '<script>';
-        echo 'alert("No eres Admin!!");';
-        echo 'window.location.href="index.php";';
-      echo '</script>';
-  }
+    echo 'alert("¡No eres admin!");';
+    echo 'window.location.href="index.php";';
+    echo '</script>'; 
+  }*/
 ?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu</title>
-</style>
-<link rel="stylesheet" href="css/style-menu.css" type="text/css">
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  </style>
+  <link rel="stylesheet" href="css/style-menu.css" type="text/css">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<div class="todo">
-  <div id="cabecera">
-  	<img src="images/swirl.png" width="1188" id="img1">
-  </div>
-  <div id="contenido">
-    <?php include'navbar.php'; ?>
-  	<table class="table-striped table-bordered tabla">
-  		<thead>
-  			<th class="tabla">ID</th>
-  			<th class="tabla">Fecha Inicio</th>
-  			<th class="tabla">Fecha Fin</th>
-  			<th class="tabla">Hora Inicio</th>
-        <th class="tabla">Hora Fin</th>
-        <th class="tabla">Usuario</th>
-        <th class="tabla">Tipo de Solicitud</th>
-        <th class="tabla">Laboratorio</th>
-        <th class="tabla">Asigantura</th>
-        <th class="tabla">Estatus</th>
-  			<th class="tabla"> <a href="nueva_reserva.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
-  		</thead>
-  		<?php
+  <div class="todo">
+    <div id="cabecera">
+      <img src="images/swirl.png" width="1188" id="img1">
+    </div>
+    <div id="contenido">
+      <?php include'navbar.php'; ?>
+      <table class="table-striped table-bordered tabla">
+        <thead>
+          <th class="tabla">ID</th>
+          <th class="tabla">Fecha Inicio</th>
+          <th class="tabla">Fecha Fin</th>
+          <th class="tabla">Hora Inicio</th>
+          <th class="tabla">Hora Fin</th>
+          <th class="tabla">Usuario</th>
+          <th class="tabla">Tipo de Solicitud</th>
+          <th class="tabla">Laboratorio</th>
+          <th class="tabla">Asignatura</th>
+          <th class="tabla">Estatus</th>
+          <th class="tabla"> <a href="nueva_reserva.php"> <button type="button" class="btn btn-info">Nuevo</button> </a>
+          </th>
+        </thead>
+        <?php
       include "conexion2.php";
       $sentencia="SELECT * FROM reserva_laboratorio";
       $resultado = $conexion->query($sentencia) or die (mysqli_error($conexion));
@@ -63,8 +66,9 @@
         echo "</tr>";
       }
       ?>
-  	</table>
+      </table>
+    </div>
   </div>
-</div>
 </body>
+
 </html>
