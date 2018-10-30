@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light">
+  <hr class="divider">
+  <nav class="navbar navbar-expand-md navbar-light barranav">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="true" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,6 +30,7 @@
       </ul>
     </div>
   </nav>
+  <hr class="divider debajo">
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
   <script src="../js/popper.min.js"></script>

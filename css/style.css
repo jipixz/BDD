@@ -39,7 +39,7 @@ form {
   position: relative;
 }
 
-.input-group .icons {
+.input-group{
   width: 35px;
   height: 35px;
   background-color: transparent;

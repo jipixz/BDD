@@ -30,3 +30,13 @@ th, td{
 .navbar-toggler{
     background-color: black;
 }
+
+.divider{
+    margin: 0;
+    padding: 0;
+    border-top: 3px solid #eee;
+}
+
+.debajo{
+    margin-bottom: 1rem;
+}
