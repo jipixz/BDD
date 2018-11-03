@@ -13,7 +13,7 @@
 
     return [
       $filas['id_asignatura'],
-      $filas['nombre'],
+      $filas['asignatura'],
       $filas['clave'],
       $filas['id_estatus'],
     ];
@@ -43,41 +43,29 @@
     <img src="images/swirl.png" width="1188" id="img1">
   </div>
   <div id="contenido">
+      <?php include'navbar.php'; ?>
     <div style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
     <span> <h2>Modificar Materia</h2> </span>
-    <br>
-    <form action="editar_materia2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
-      <div class="row">
-        <div class="col-xs-3">
+    <form class="col-sm-4" action="editar_materia2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
+      <div class="form-group">
         <label>ID Materia:</label>
         <input type="text" name="id_user" id="id_user" class="form-control" readonly="readonly" value="<?php echo $consulta[0]; ?>">
-        </div>
       </div>
-      <div>
-        <div class="row">
-          <div class="col-xs-3">
-          <label>Nombre:</label>
-          <input type="text" name="nom" id="nom" class="form-control" value="<?php echo $consulta[1]?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-          <label>Clave</label>
-          <input type="text" name="clav" id="clav" class="form-control" value="<?php echo $consulta[2]?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-          <label>Status:</label>
-          <select name="estatus" id="estatus" class="form-control">
-            <!--<option> <?php echo $consulta[3]; ?>  </option>-->
-            <option>ACTIVO</option>
-            <option>INACTIVO</option>
-          </select>
-          </div>
-        </div>
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" name="nom" id="nom" class="form-control" value="<?php echo $consulta[1]?>">
       </div>
-      <br>
+      <div class="form-group">
+        <label>Clave</label>
+        <input type="text" name="clav" id="clav" class="form-control" value="<?php echo $consulta[2]?>">
+      </div>
+      <div class="form-group">
+        <label>Status:</label>
+        <select name="estatus" id="estatus" class="form-control">
+          <option value="1">Activo</option>
+          <option value="2">Inactivo</option>
+        </select>
+      </div>
       <button type="submit" class="btn btn-success">Guardar</button>
     </form>
     </div>

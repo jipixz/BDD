@@ -14,6 +14,7 @@
     flex-flow: row wrap;
     position: relative;
     padding-top: 2rem;
+    padding-bottom: 2rem;
     font-size: 1.8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -39,6 +40,8 @@ form {
 .foto{
     margin-top: 2rem;
     margin-bottom: 1rem;
+    margin-right: auto;
+    margin-left: auto;
     max-height: 200px;
     max-width: 200px;
     border-radius: 15px;
@@ -46,8 +49,51 @@ form {
 
 .link{
     text-align: center;
-    margin: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.subir-imagen{
+    padding: 10px;
+}
+
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.modala{
+    z-index: 999;
+}
+
+.numero{
+    font-size: 1rem;
+}
+
+a{
+    text-align: center;
+}
+
+.space{
     margin-top: 1rem;
 }

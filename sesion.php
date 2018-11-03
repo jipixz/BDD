@@ -1,5 +1,6 @@
 <?php
     session_start();
+    //$usuario_id = "SELECT id_usuario FROM usuarios WHERE "
     $id = $_SESSION['nombre']; 
     //$id = $_GET['nombre'];
     //echo $id;
@@ -34,7 +35,11 @@
             echo 'Nombre no encontrado en la base de datos';
         }else{
             #Comienza la extraccion de datos
-            $query = "SELECT nombre, apellidos, correo, matricula, celular, estatus FROM usuarios WHERE nombre = '$id'";
+            $query = "SELECT nombre, apellidos, correo, matricula, celular, us.estatus 
+            FROM usuarios 
+            LEFT JOIN estatus_usuario us
+            ON usuarios.estatus = us.id_estatus_usuario
+            WHERE matricula = '$id'";
             $usuario = $conexion->query($query) or die (mysqli_error($conexion));
             while($resultado = $usuario->fetch_assoc()){
                 
@@ -43,7 +48,10 @@
                 <form class='formulario'>
                   <div class="col-sm-4">
                     <img class="img-fluid d-block foto" src="obtener_foto.php" height="200px" width="200px"/>
-                    <a class="link" href="subir-imagen.php" type="link">Cambiar foto de perfil</a>
+                    <div class="col-sm-12 text-center">
+                      <a class="btn btn-outline-primary space" href="subir-imagen.php">Cambiar foto de perfil</a>
+                      <a class="btn btn-outline-primary space" href="cambio_datos.php">Modificar datos</a>
+                    </div>
                   </div>
                   <div class='input-group col-sm-8'>
 

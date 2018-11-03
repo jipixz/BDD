@@ -35,7 +35,7 @@
 
   		<?php
       include "conexion2.php";
-      $sentencia="SELECT * FROM usuarios";
+      $sentencia="SELECT us.id_usuario, us.nombre, us.apellidos, us.correo, us.password, us.matricula, tu.tipo_de_usuario FROM usuarios us INNER JOIN tipo_de_usuario tu ON us.id_tipo_de_usuario = tu.id_tipo_de_usuario";
       $resultado = $conexion->query($sentencia) or die (mysqli_error($conexion));
       while($filas=$resultado->fetch_assoc())
       {
@@ -46,7 +46,7 @@
           echo "<td class='tabla'>"; echo $filas['correo']; echo "</td>";
           echo "<td class='tabla'>"; echo $filas['password']; echo "</td>";
           echo "<td class='tabla'>"; echo $filas['matricula']; echo "</td>";
-          echo "<td class='tabla'>"; echo $filas['id_tipo_de_usuario']; echo "</td>";
+          echo "<td class='tabla'>"; echo $filas['tipo_de_usuario']; echo "</td>";
           echo "<td class='tabla'>  <a href='editar_usuario.php?no=".$filas['id_usuario']."'> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>";
           echo "<td class='tabla'> <a href='eliminar_usuario.php?no=".$filas['id_usuario']."''><button type='button' class='btn btn-danger'>Eliminar</button></a> </td>";
         echo "</tr>";

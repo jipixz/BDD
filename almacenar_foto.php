@@ -10,7 +10,7 @@ include'conexion2.php';
 //Comprobamos si ha ocurrido un error.
 if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
 
-    echo "Ha ocurrido un error.";
+    $fail = "Verifica que hayas elegido una imagen o que no supere los 2 megas de tamaño.";
 
 }else{
 
@@ -50,21 +50,64 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
             // Insertamos en la base de datos si ya existía un archivo
             $query = "UPDATE imagenes SET imagen='$data', tipo_imagen='$tipo' WHERE usuario='$id'";
             $resultado = $conexion->query($query) or die (mysqli_error($conexion));
-            echo "Se ha actualizado tu foto correctamente.";
+            $success = "Se ha actualizado tu foto correctamente.";
 
         }else{
 
             // Insertamos en la base de datos si no existe foto
             $query = "INSERT INTO imagenes (imagen, tipo_imagen, usuario) VALUES ('$data', '$tipo', '$id')";
             $resultado = $conexion->query($query) or die (mysqli_error($conexion));
-            echo "Se ha subido tu foto correctamente.";
+            $success = "Se ha subido tu foto correctamente.";
 
         }
 
     }else{
         
         //En dado caso de que el usuario ingrese otro tipo de dato o muy grande se regresa esto.
-        echo "Formato de archivo no permitido o excede el tamaño límite de $limite_kb Kbytes.";
+        $fail = "Formato de archivo no permitido o excede el tamaño límite de $limite_kb Kbytes.";
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/sesion.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style-menu.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="todo">
+
+        <div id="cabecera">
+            <img src="images/swirl.png" width="1188" id="img1">
+        </div>
+
+        <div id="contenido">
+        <?php include'navbar.php'; ?>
+
+        <form class="formulario input-group" action="almacenar_foto.php" method="POST" enctype="multipart/form-data">
+            <?php
+            if(isset($fail)){
+                echo "$fail";
+            }else{
+                echo"$success";
+                echo"<br><a class='btn btn-outline-info' href='sesion'>Volver a la pagina principal</a>"; 
+            }
+            ?>
+        </form>
+        
+        </div>
+    </div>
+
+</body>
+
+</html>

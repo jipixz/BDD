@@ -1,16 +1,13 @@
 <?php
 	session_start();
 	//$_SESSION['usuario'];
-
 	include "conexion2.php";
-
-
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu</title>
 <style type="text/css">
@@ -38,16 +35,19 @@
   		</thead>
 
       <?php
-        $query="SELECT * FROM asignaturas";
+				$query="SELECT us.id_asignatura, us.asignatura, us.clave, tu.estatus_materia 
+				FROM asignaturas us 
+				LEFT JOIN estatus_materia tu ON us.id_estatus = tu.id_estatus_materia";
+        //$query="SELECT * FROM asignaturas";
         $resultado = $conexion->query($query) or die ("Error al consultar usuarios: ".mysqli_error($conexion));
         while ($filas=$resultado->fetch_assoc())
         {
 
       ?>
 			  <tr>
-			  	 <td class='tabla'> <?php echo $filas['nombre']?>  </td>
+			  	 <td class='tabla'> <?php echo $filas['asignatura']?>  </td>
 			     <td class='tabla'> <?php echo $filas['clave']?> </td>
-			     <td class='tabla'> <?php echo $filas['id_estatus']?> </td>
+			     <td class='tabla'> <?php echo $filas['estatus_materia']?> </td>
 			     <td class='tabla'>  <a href='editar_materia.php?usr=<?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>
 			     <td class='tabla'> <a href='eliminar_materia.php?usr= <?php echo $filas['id_asignatura'] ?> '> <button type='button' class='btn btn-danger'>Eliminar</button></a> </td>
 			  </tr>
