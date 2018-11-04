@@ -33,11 +33,11 @@
         <form class="col-sm-4" action="añadir_materia2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
           <div class="form-group">
             <label>Nombre:</label>
-            <input type="text" name="nom" id="nom" class="form-control">
+            <input type="text" name="nom" id="nom" class="form-control" required>
           </div>
           <div class="form-group">
             <label>Clave:</label>
-            <input type="text" name="clav" id="usr" class="form-control">
+            <input type="text" name="clav" id="usr" class="form-control" required>
           </div>
           <button type="submit" class="btn btn-success">Añadir</button>
         </form>

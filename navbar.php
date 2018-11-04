@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navegacion">
       <ul class="nav navbar-nav left mr-auto">
         <li><a href="menu.php" class="text">Inicio</a></li>
-        <li><a href="materias.php" class="text">Materias</a></li>
+        <li><a href="materias.php" class="text">Asignaturas</a></li>
         <li><a href="usuarios.php" class="text">Usuarios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right right mr-auto">

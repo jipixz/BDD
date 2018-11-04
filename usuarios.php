@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	//$_SESSION['usuario'];
+	include "conexion2.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +41,7 @@
 
   		<?php
       include "conexion2.php";
-      $sentencia="SELECT us.id_usuario, us.nombre, us.apellidos, us.correo, us.password, us.matricula, tu.tipo_de_usuario FROM usuarios us INNER JOIN tipo_de_usuario tu ON us.id_tipo_de_usuario = tu.id_tipo_de_usuario";
+      $sentencia="SELECT us.id_usuario, us.nombre, us.apellidos, us.correo, us.password, us.matricula, tu.tipo_de_usuario FROM usuarios us LEFT JOIN tipo_de_usuario tu ON us.id_tipo_de_usuario = tu.id_tipo_de_usuario";
       $resultado = $conexion->query($sentencia) or die (mysqli_error($conexion));
       while($filas=$resultado->fetch_assoc())
       {
