@@ -22,9 +22,10 @@
 <div class="todo">
 
   <div id="cabecera">
-  	<img src="images/swirl.png" width="1188" id="img1">
+	<//img src="images/swirl.png" width="1188" id="img1">
   </div>
     <?php include'navbar.php'; ?>
+		<h1 align="center" >Usuarios</h1>
   <div id="contenido">
   	<table class="table-striped table-bordered tabla">
   		<thead>

@@ -8,7 +8,7 @@
 	}
 	else {
 
-		//printf("Estas conectado");
-		
+	//	printf("Estas conectado");
+
 	}
 ?>

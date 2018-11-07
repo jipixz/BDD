@@ -5,7 +5,7 @@
 	function NuevoUsuario($nombre, $clave)
 	{
 		include 'conexion2.php';
-		$sentencia="INSERT INTO asignaturas (asignatura, clave, id_estatus) VALUES ('".$nombre."', '".$clave."', 'ACTIVO' )";
+		$sentencia="INSERT INTO asignaturas (asignatura, clave, id_estatus) VALUES ('".$nombre."', '".$clave."', '1' )";
 		$conexion->query($sentencia) or die ("Error al crear usuario: ".mysqli_error($conexion));
 
 

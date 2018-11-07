@@ -20,13 +20,14 @@
 <div class="todo">
 
   <div id="cabecera">
-  	<img src="images/swirl.png" width="1188" id="img1">
+	<//img src="images/swirl.png" width="1188" id="img1">
   </div>
 
   <div id="contenido">
     <?php include'navbar.php'; ?>
 
   	<table class="table-striped table-bordered tabla">
+		<h1 align="center" >Asignaturas</h1>
   		<thead>
   			<th class="tabla">Nombre</th>
   			<th class="tabla">Clave</th>
@@ -35,8 +36,8 @@
   		</thead>
 
       <?php
-				$query="SELECT us.id_asignatura, us.asignatura, us.clave, tu.estatus_materia 
-				FROM asignaturas us 
+				$query="SELECT us.id_asignatura, us.asignatura, us.clave, tu.estatus_materia
+				FROM asignaturas us
 				LEFT JOIN estatus_materia tu ON us.id_estatus = tu.id_estatus_materia";
         //$query="SELECT * FROM asignaturas";
         $resultado = $conexion->query($query) or die ("Error al consultar usuarios: ".mysqli_error($conexion));

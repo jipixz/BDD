@@ -22,7 +22,7 @@
 <body>
     <div class="todo">
         <div id="cabecera">
-            <img src="images/swirl.png" width="1188" id="img1">
+        <//img src="images/swirl.png" width="1188" id="img1">
         </div>
         <div id="contenido">
             <?php include'navbar.php';?>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>Password:</label>
-                        <input type="text" name="pas" id="pas" class="form-control" required>
+                        <input type="text" name="pas" id="pas" pattern="[A-Za-z0-9]{1,15}" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Matricula:</label>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$id = $_SESSION['nombre']; 
+$id = $_SESSION['nombre'];
 
 //Conexion a la base de datos
 $conexion = new mysqli("localhost", "root", "", "reserva_laboratorio");
@@ -28,7 +28,7 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
 
         // Leemos el contenido del archivo temporal en binario.
         //El código de abajo es una forma diferente de leer el contenido del archivo de imagen temporal.
-        
+
         /*
         $fp = fopen($imagen_temporal, 'r+b');
         $data = fread($fp, filesize($imagen_temporal));
@@ -46,7 +46,7 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
         $row_cnt = $respuesta->num_rows;
 
         if($row_cnt>0){
-            
+
             // Insertamos en la base de datos si ya existía un archivo
             $query = "UPDATE imagenes SET imagen='$data', tipo_imagen='$tipo' WHERE usuario='$id'";
             $resultado = $conexion->query($query) or die (mysqli_error($conexion));
@@ -62,7 +62,7 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
         }
 
     }else{
-        
+
         //En dado caso de que el usuario ingrese otro tipo de dato o muy grande se regresa esto.
         $fail = "Formato de archivo no permitido o excede el tamaño límite de $limite_kb Kbytes.";
     }
@@ -88,7 +88,7 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
     <div class="todo">
 
         <div id="cabecera">
-            <img src="images/swirl.png" width="1188" id="img1">
+        <//img src="images/swirl.png" width="1188" id="img1">
         </div>
 
         <div id="contenido">
@@ -100,11 +100,12 @@ if (!isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){
                 echo "$fail";
             }else{
                 echo"$success";
-                echo"<br><a class='btn btn-outline-info' href='sesion'>Volver a la pagina principal</a>"; 
+                echo"<br><a class='btn btn-outline-info' href='sesion.php'>Volver a la pagina principal</a>";
             }
             ?>
+            <br><a class='btn' href='subir-imagen.php'>Subir otra foto</a>
         </form>
-        
+
         </div>
     </div>
 

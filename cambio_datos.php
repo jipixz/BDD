@@ -1,18 +1,18 @@
 <?php
     session_start();
-    $id = $_SESSION['nombre']; 
+    $id = $_SESSION['nombre'];
 
-    $consulta=ConsultarUsuario($id);   
+    $consulta=ConsultarUsuario($id);
     function ConsultarUsuario($id){
 
         include 'conexion2.php'; //Se necesita el include dentro de la funcion para que no de error al intentar conectar con la base de datos
-        $query = "SELECT id_usuario, nombre, apellidos, correo, password, matricula, celular, us.estatus 
-        FROM usuarios 
+        $query = "SELECT id_usuario, nombre, apellidos, correo, password, matricula, celular, us.estatus
+        FROM usuarios
         LEFT JOIN estatus_usuario us
         ON usuarios.estatus = us.id_estatus_usuario
         WHERE matricula = '$id'";
-        $resultado= $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion) );    
-        $filas=$resultado->fetch_assoc(); 
+        $resultado= $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion) );
+        $filas=$resultado->fetch_assoc();
         return [
             $filas['id_usuario'],
             $filas['nombre'],
@@ -22,7 +22,7 @@
             $filas['matricula'],
             $filas['celular'],
             $filas['estatus'],
-        ]; 
+        ];
 
     }
 ?>
@@ -31,7 +31,7 @@
 <html>
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <script src="js/jquery-3.3.1.slim.min.js"></script>
@@ -46,7 +46,7 @@
     <div class="todo">
 
         <div id="cabecera">
-            <img src="images/swirl.png" width="1188" id="img1">
+        <//img src="images/swirl.png" width="1188" id="img1">
         </div>
 
         <div id="contenido">

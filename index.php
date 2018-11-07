@@ -19,11 +19,11 @@
       <form class="form-signin" method="POST" action="login.php">
         <i class="fas fa-user fa-2x iconos"></i>
         <label for="inputEmail" class="letras">Usuario</label>
-        <input type="text" id="inputUsuario" name="inputUsuario" class="form-control input-lg" placeholder="Ingrese su usuario" required autofocus>
+        <input type="text" id="inputUsuario" name="inputUsuario" pattern="[0-9]{1,9}" class="form-control input-lg" placeholder="Ingrese su usuario" required autofocus>
 
         <i class="fas fa-lock fa-2x iconos"></i>
         <label for="inputPassword" class="inputbox letras" >Contraseña</label>
-        <input type="password" id="inputPassword" name="inputPassword" class="form-control input-lg" placeholder="Ingrese su contraseña" required>
+        <input type="password" id="inputPassword" name="inputPassword" pattern="[A-Za-z0-9_-]{1,15}" class="form-control input-lg" placeholder="Ingrese su contraseña" required>
 
         <div class="checkbox">
           <button class="btn btn-success btn-lg" type="submit">Iniciar sesión</button>

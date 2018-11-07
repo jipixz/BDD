@@ -7,11 +7,11 @@
 
 body {
   font-family: sans-serif;
-  color:   #ffffff;
+  color:   #ede3e3;
 }
 
 .bg-image {
-  background-image: url('../images/qlo.png');
+  background-image: url('../images/cover.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -74,8 +74,8 @@ form {
 .btn-flat-green {
   border: transparent;
   height: 35px;
-  background-color: #00e676;
-  color: #000000;
+  background-color:  #001978;
+  color: #ffffff;
   font-family: sans-serif;
   margin-bottom: 10px;
   font-weight: bold;
@@ -88,9 +88,9 @@ form {
   display: block;
   color:  #000000;
 }
- 
+
 .sesion{
-  width: 250px; 
+  width: 250px;
   margin: auto;
 }
 
@@ -156,4 +156,34 @@ form {
   background: #0000004d;
   border-radius: 10px;
 }
+.caja {
+   margin:20px auto 40px auto;
+   border:1px solid #d9d9d9;
+   height:30px;
+   overflow: hidden;
+   width: 230px;
+   position:relative;
+}
+select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+select:focus{ outline: none;}
 
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;
+	pointer-events: none;
+}

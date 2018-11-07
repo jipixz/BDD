@@ -1,7 +1,7 @@
 <?php
     session_start();
     //$usuario_id = "SELECT id_usuario FROM usuarios WHERE "
-    $id = $_SESSION['nombre']; 
+    $id = $_SESSION['nombre'];
     //$id = $_GET['nombre'];
     //echo $id;
 ?>
@@ -23,11 +23,12 @@
 <body>
   <div class="todo">
     <div id="cabecera">
-      <img src="images/swirl.png" width="1188" id="img1">
+    <//img src="images/swirl.png" width="1188" id="img1">
     </div>
     <div id="contenido">
-      <?php 
-        include'navbar.php'; 
+      <?php include'navbar.php';?>
+      <?php
+
         include'conexion2.php';
         #Extracción de datos de la base de datos
 
@@ -35,14 +36,14 @@
             echo 'Nombre no encontrado en la base de datos';
         }else{
             #Comienza la extraccion de datos
-            $query = "SELECT nombre, apellidos, correo, matricula, celular, us.estatus 
-            FROM usuarios 
+            $query = "SELECT nombre, apellidos, correo, matricula, celular, us.estatus
+            FROM usuarios
             LEFT JOIN estatus_usuario us
             ON usuarios.estatus = us.id_estatus_usuario
             WHERE matricula = '$id'";
             $usuario = $conexion->query($query) or die (mysqli_error($conexion));
             while($resultado = $usuario->fetch_assoc()){
-                
+
                 ?>
 
                 <form class='formulario'>
@@ -54,14 +55,14 @@
                     </div>
                   </div>
                   <div class='input-group col-sm-8'>
-
+                  <h1 align="center" >Informacíon</h1>
                 <?php
-                
+
                 echo "<label class='control-label col-sm-8' for='nombre'>Nombre:</label>";
                 echo "<div class='col-sm-8'><p class='form-control-static'><span>"; echo $resultado['nombre']; echo "</span></p>";
                 echo "</div>";
                 echo "</span>";
-            
+
                 echo "<label class='control-label col-sm-8' for='nombre'>Apellidos:</label>";
                 echo "<div class='col-sm-8'><p class='form-control-static'>"; echo $resultado['apellidos']; echo "</p>";
                 echo "</div>";

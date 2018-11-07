@@ -10,7 +10,7 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alta de materia</title>
+  <title>Añadir Laboratorio</title>
   <style type="text/css">
     @import url("css/mycss.css");
   </style>
@@ -28,16 +28,16 @@
       <?php include'navbar.php'; ?>
       <div style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
         <span>
-          <h1>Nueva Materia</h1>
+          <h1>Añadir Laboratorio</h1>
         </span>
-        <form class="col-sm-4" action="añadir_materia2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
+        <form class="col-sm-4" action="añadir_laboratorio2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
           <div class="form-group">
-            <label>Nombre:</label>
-            <input type="text" name="nom" id="nom" class="form-control" required>
+            <label>Laboratorio:</label>
+            <input type="text" name="laboratorio" id="laboratorio" class="form-control" required>
           </div>
           <div class="form-group">
-            <label>Clave:</label>
-            <input type="text" name="clav" id="usr" class="form-control" required>
+            <label>Responsable del Laboratorio:</label>
+            <input type="text" name="responsable" id="responsable" class="form-control" required>
           </div>
           <button type="submit" class="btn btn-success">Añadir</button>
         </form>

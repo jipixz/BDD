@@ -22,7 +22,7 @@
   <div class="todo">
 
     <div id="cabecera">
-      <img src="images/swirl.png" width="1188" id="img1">
+    <//img src="images/swirl.png" width="1188" id="img1">
     </div>
 
     <div id="contenido">
@@ -47,13 +47,13 @@
             </div>
 
             <input class="btn btn-primary subir-imagen " type="submit" name="subir" value="Subir Imagen"/>
-  
+
         </form>
 
     </div>
 
   </div>
-          
+
 </body>
 
 </html>

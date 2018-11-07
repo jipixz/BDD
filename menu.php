@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-/*  if ($_SESSION['nombre'] != 'root')
+  if ($_SESSION['estatus'] != '1')
   {
     echo '<script>';
     echo 'alert("¡No eres admin!");';
     echo 'window.location.href="index.php";';
-    echo '</script>'; 
-  }*/
+    echo '</script>';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +21,16 @@
   <link rel="stylesheet" href="css/style-menu.css" type="text/css">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
   <div class="todo">
     <div id="cabecera">
-      <img src="images/swirl.png" width="1188" id="img1">
+    <//img src="images/swirl.png" width="1188" id="img1">
     </div>
     <div id="contenido">
       <?php include'navbar.php'; ?>
+
       <table class="table-striped table-bordered tabla">
+        <h1 align="center" >Reservas</h1>
         <thead>
           <th class="tabla">ID</th>
           <th class="tabla">Fecha Inicio</th>
@@ -46,12 +47,12 @@
         </thead>
         <?php
       include "conexion2.php";
-      $sentencia="SELECT us.id_reserva_laboratorio, us.fecha_inicio, us.fecha_fin, us.hora_inicio, us.hora_fin, usu.nombre, us.id_usuario, tip.tipo_solicitud, 
+      $sentencia="SELECT us.id_reserva_laboratorio, us.fecha_inicio, us.fecha_fin, us.hora_inicio, us.hora_fin, usu.nombre, us.id_usuario, tip.tipo_solicitud,
       lab.laboratorio, asi.asignatura, us.id_status, sol.estatus_solicitud
-      FROM reserva_laboratorio us 
+      FROM reserva_laboratorio us
       LEFT JOIN tipo_solicitud tip ON us.id_tipo_solicitud = tip.id_tipo_solicitud
       LEFT JOIN usuarios usu ON us.id_usuario = usu.id_usuario
-      LEFT JOIN laboratorio lab ON us.id_laboratorio = lab.id_laboratorio 
+      LEFT JOIN laboratorio lab ON us.id_laboratorio = lab.id_laboratorio
       LEFT JOIN asignaturas asi ON us.id_asignatura = asi.id_asignatura
       LEFT JOIN estatus_solicitud sol ON us.id_status = sol.id_estatus_solicitud";
       //$sentencia="SELECT * FROM reserva_laboratorio";
