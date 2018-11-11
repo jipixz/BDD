@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if ($_SESSION['estatus'] != '1'){
+        header('Location: index.php');
+      }
     $id = $_SESSION['nombre'];
 
     $consulta=ConsultarUsuario($id);

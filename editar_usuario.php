@@ -1,4 +1,7 @@
 <?php
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
+  }
     $consulta=ConsultarUsuario($_GET['no']);  
     function ConsultarUsuario($id){
 

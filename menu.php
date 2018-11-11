@@ -1,12 +1,7 @@
 <?php
   session_start();
-
-  if ($_SESSION['estatus'] != '1')
-  {
-    echo '<script>';
-    echo 'alert("¡No eres admin!");';
-    echo 'window.location.href="index.php";';
-    echo '</script>';
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
   }
 ?>
 

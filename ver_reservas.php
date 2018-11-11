@@ -1,4 +1,8 @@
-	<?php
+<?php
+  session_start();
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
+  }
   $mysqli = new mysqli('localhost', 'root', '', 'reserva_laboratorio');
 ?>
 <!DOCTYPE html>
