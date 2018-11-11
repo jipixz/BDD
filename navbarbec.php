@@ -20,9 +20,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navegacion">
       <ul class="nav navbar-nav left mr-auto">
-        <li><a href="filtrar_reservas.php" class="text">Reservas</a></li>
+        <li><a href="menu.php" class="text">Reservas</a></li>
         <li><a href="materias.php" class="text">Asignaturas</a></li>
-        <li><a href="select_tipo_de_usuario.php" class="text">Usuarios</a></li>
         <li><a href="laboratorios.php" class="text">Laboratorios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right right mr-auto">

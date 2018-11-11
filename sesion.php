@@ -1,10 +1,7 @@
 <?php
     session_start();
-    if ($_SESSION['estatus'] != '1'){
-      header('Location: index.php');
-    }
     //$usuario_id = "SELECT id_usuario FROM usuarios WHERE "
-    $id = $_SESSION['nombre'];
+    $id = $_SESSION['matricula'];
     //$id = $_GET['nombre'];
     //echo $id;
 ?>
@@ -43,7 +40,7 @@
             FROM usuarios
             LEFT JOIN estatus_usuario us
             ON usuarios.estatus = us.id_estatus_usuario
-            WHERE matricula = '$id'";
+            WHERE matricula = '".$id."'";
             $usuario = $conexion->query($query) or die (mysqli_error($conexion));
             while($resultado = $usuario->fetch_assoc()){
 
@@ -58,7 +55,7 @@
                     </div>
                   </div>
                   <div class='input-group col-sm-8'>
-                  <h1 align="center" >Informacíon</h1>
+                  <h1 align="center" >Información</h1>
                 <?php
 
                 echo "<label class='control-label col-sm-8' for='nombre'>Nombre:</label>";

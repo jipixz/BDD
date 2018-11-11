@@ -1,20 +1,18 @@
 <?php
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
-    $consulta=ConsultarUsuario($_GET['no']);  
+    session_start();
+    $consulta=ConsultarUsuario($_GET['no']);
     function ConsultarUsuario($id){
 
         include 'conexion2.php'; //Se necesita el include dentro de la funcion para que no de error al intentar conectar con la base de datos
-        $query = "SELECT id_usuario, nombre, apellidos, correo, password, matricula, celular, ti.tipo_de_usuario, us.estatus 
-        FROM usuarios 
+        $query = "SELECT id_usuario, nombre, apellidos, correo, password, matricula, celular, ti.tipo_de_usuario, us.estatus
+        FROM usuarios
         LEFT JOIN estatus_usuario us
         ON usuarios.estatus = us.id_estatus_usuario
         LEFT JOIN tipo_de_usuario ti
         ON usuarios.id_tipo_de_usuario = ti.id_tipo_de_usuario
         WHERE id_usuario = '$id'";
-        $resultado= $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion) );    
-        $filas=$resultado->fetch_assoc(); 
+        $resultado= $conexion->query($query) or die ("Error al consultar usuario: ".mysqli_error($conexion) );
+        $filas=$resultado->fetch_assoc();
         return [
             $filas['id_usuario'],
             $filas['nombre'],
@@ -25,7 +23,7 @@
             $filas['celular'],
             $filas['tipo_de_usuario'],
             $filas['estatus'],
-        ]; 
+        ];
 
     }
 ?>
@@ -47,7 +45,7 @@
 <body>
     <div class="todo">
         <div id="cabecera">
-            <img src="images/swirl.png" width="1188" id="img1">
+        <//img src="images/swirl.png" width="1188" id="img1">
         </div>
         <div id="contenido">
             <?php include'navbar.php';?>

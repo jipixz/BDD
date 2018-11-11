@@ -1,10 +1,12 @@
 <?php
-  session_start();
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
-	//$_SESSION['usuario'];
-	include "conexion2.php";
+	session_start();
+	if ($_SESSION['id_tipo_de_usuario'] != 1){
+		echo '<script>';
+    //echo 'alert("¡usuario no activo!");';
+    echo 'window.location.href="sesion.php";';
+    echo '</script>';
+	}
+	//include "conexion2.php";
 ?>
 
 <!DOCTYPE html>

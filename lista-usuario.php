@@ -1,7 +1,4 @@
 <?php
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
 function conexion ($bd_config){
 
     try {

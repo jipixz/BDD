@@ -1,6 +1,6 @@
 <?php
   //include 'conexion.php';
-
+  session_start();
   $consulta=ConsultarUsuario($_GET['lab']);
 
   function ConsultarUsuario($id)

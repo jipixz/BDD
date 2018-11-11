@@ -1,9 +1,6 @@
-<?php
-  session_start();
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
+	<?php
   $mysqli = new mysqli('localhost', 'root', '', 'reserva_laboratorio');
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,16 +21,15 @@
       <div id="contenido">
         <?php include'navbar.php'; ?>
         <div style="margin: auto; width: 250px; border-collapse: separate; border-spacing: 5px 5px;">
-
-        <h1 align="center">Laboratorios</h1>
-    <p align="center" >Seleccione el Laboratorio:</p>
+				<h1 align="center">Laboratorios</h1>
+				
       <select>
-        <option value="0">Laboratorios:</option>
+        <option value="0">Estatus Laboratorio:</option>
         <div class="caja">
         <?php
-          $query = $mysqli -> query ("SELECT * FROM laboratorio");
+          $query = $mysqli -> query ("SELECT * FROM estatus_solicitud");
           while ($laboratorio = mysqli_fetch_array($query)) {
-            echo '<option value="'.$laboratorio[id_laboratorio].'">'.$laboratorio[laboratorio].'</option>';
+            echo '<option value="'.$laboratorio[id_estatus_solicitud].'">'.$laboratorio[estatus_solicitud].'</option>';
           }
         ?>
       </select>

@@ -1,8 +1,6 @@
 <?php
   //include 'conexion.php';
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
+  session_start();
   $consulta=ConsultarUsuario($_GET['usr']);
 
   function ConsultarUsuario($id)

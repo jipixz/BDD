@@ -3,13 +3,15 @@
 
   if ($_SESSION['estatus'] != 1){
 
-  }elseif ($_SESSION['id_tipo_de_usuario'] != 1) {
+  }elseif ($_SESSION['id_tipo_de_usuario'] != 2) {
     echo '<script>';
     //echo 'alert("¡usuario no activo!");';
-    echo 'window.location.href="menuresp.php";';
+    echo 'window.location.href="menuprof.php";';
     echo '</script>';
   }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 

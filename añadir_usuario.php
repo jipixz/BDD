@@ -1,8 +1,5 @@
 <?php
   session_start();
-  if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
   //$_SESSION['usuario'];
 
   include "conexion2.php";
@@ -46,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>Password:</label>
-                        <input type="text" name="pas" id="pas" pattern="[A-Za-z0-9]{1,15}" class="form-control" required>
+                        <input type="text" name="pas" id="pas" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Matricula:</label>

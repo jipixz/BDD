@@ -1,8 +1,5 @@
 <?php
 session_start();
-if ($_SESSION['estatus'] != '1'){
-    header('Location: index.php');
-  }
 $id = $_SESSION['nombre'];
 
 //Conexion a la base de datos
