@@ -1,9 +1,7 @@
-  <!DOCTYPE html>
-  <?php
-
+<?php
     $mysqli = new mysqli('localhost', 'root', '', 'reserva_laboratorio');
-
-  ?>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">

@@ -1,5 +1,8 @@
 <?php
-  session_start();
+    session_start();
+    if ($_SESSION['estatus'] != '1'){
+        header('Location: index.php');
+    }
 
   if ($_SESSION['estatus'] != 1){
 

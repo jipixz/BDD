@@ -4,28 +4,28 @@
 	$matricula = mysqli_real_escape_string($conexion,$_POST['inputUsuario']);
 	$password = mysqli_real_escape_string($conexion,$_POST['inputPassword']);
 
-		$consulta=ValidarUsuario($matricula,$password);
+	$consulta=ValidarUsuario($matricula,$password);
 
-		function ValidarUsuario ($matricula, $password){
-		include 'conexion2.php';
+	function ValidarUsuario ($matricula, $password){
+	include 'conexion2.php';
 
 		$sentencia="SELECT *
-								FROM usuarios
-								WHERE matricula='".$matricula."'
-								AND password=BINARY'".$password."'
-								AND estatus='1'  ";
+					FROM usuarios
+					WHERE matricula='".$matricula."'
+					AND password=BINARY'".$password."'
+					AND estatus='1'  ";
 
 		$resultado=$conexion->query($sentencia) or die ("Error al comprobar usuario: ".mysqli_error($conexion));
 		$filas=$resultado->fetch_assoc();
 		return [
-      $filas['nombre'],
-      $filas['password'],
-      $filas['id_tipo_de_usuario'],
+      		$filas['nombre'],
+      		$filas['password'],
+      		$filas['id_tipo_de_usuario'],
 			$filas['estatus'],
 			$filas['matricula'],
 
-    ];
-}
+    	];
+	}
 	if($nombre=$consulta[0] && $password=$consulta[1]){
 
 			$_SESSION['nombre']=$consulta[0];

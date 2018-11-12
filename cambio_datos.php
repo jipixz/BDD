@@ -1,7 +1,9 @@
 <?php
     session_start();
-    $id = $_SESSION['nombre'];
-
+    if ($_SESSION['estatus'] != '1'){
+        header('Location: index.php');
+    }
+    $id = $_SESSION['matricula'];
     $consulta=ConsultarUsuario($id);
     function ConsultarUsuario($id){
 

@@ -1,8 +1,8 @@
 <?php
   session_start();
-  //$_SESSION['usuario'];
-
-  include "conexion2.php";
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
+  }
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if ($_SESSION['estatus'] != '1'){
+        header('Location: index.php');
+    }
     //$usuario_id = "SELECT id_usuario FROM usuarios WHERE "
     $id = $_SESSION['matricula'];
     //$id = $_GET['nombre'];

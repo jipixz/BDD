@@ -1,7 +1,8 @@
 <?php
-	session_start();
-	//$_SESSION['usuario'];
-	include "conexion2.php";
+  session_start();
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
+  }
 ?>
 
 <!DOCTYPE html>
@@ -35,15 +36,14 @@
   			<th class="tabla"> <a href="añadir_materia.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
   		</thead>
 
-      <?php
+			<?php
+				include 'conexion2.php';
 				$query="SELECT us.id_asignatura, us.asignatura, us.clave, tu.estatus_materia
 				FROM asignaturas us
 				LEFT JOIN estatus_materia tu ON us.id_estatus = tu.id_estatus_materia";
         //$query="SELECT * FROM asignaturas";
         $resultado = $conexion->query($query) or die ("Error al consultar usuarios: ".mysqli_error($conexion));
-        while ($filas=$resultado->fetch_assoc())
-        {
-
+        while ($filas=$resultado->fetch_assoc()){
       ?>
 			  <tr>
 			  	 <td class='tabla'> <?php echo $filas['asignatura']?>  </td>

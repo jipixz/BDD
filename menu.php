@@ -1,13 +1,7 @@
 <?php
   session_start();
-
-  if ($_SESSION['estatus'] != 1){
-
-  }elseif ($_SESSION['id_tipo_de_usuario'] != 1) {
-    echo '<script>';
-    //echo 'alert("¡usuario no activo!");';
-    echo 'window.location.href="menuresp.php";';
-    echo '</script>';
+  if ($_SESSION['estatus'] != '1'){
+    header('Location: index.php');
   }
 ?>
 <!DOCTYPE html>

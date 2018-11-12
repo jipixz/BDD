@@ -1,5 +1,8 @@
-	<?php
-	session_start();
+<?php
+  session_start();
+  if ($_SESSION['estatus'] != '1'){
+      header('Location: index.php');
+  }
   $mysqli = new mysqli('localhost', 'root', '', 'reserva_laboratorio');
 ?>
 <!DOCTYPE html>
@@ -17,71 +20,67 @@
     <link rel="stylesheet" href="css/style-menu.css" type="text/css">
   </head>
   <body>
-
-      <div id="contenido">
-        <?php include'navbar.php'; ?>
-        <h1 align="center">Tipos de usuario</h1>
-        <div style="margin: auto; width: 250px; border-collapse: separate; border-spacing: 5px 5px;">
-
-
-    <p align="center" >Seleccione el tipo de usuario:</p>
-    <form>
-      <select class="form-group" name="tipo_user">
-        <option value="0">Tipos de usuario:</option>
-        <div class="caja">
-        <?php
-          $query = $mysqli -> query ("SELECT * FROM tipo_de_usuario");
-          while ($tipos_user = mysqli_fetch_array($query)) {
-            echo '<option value="'.$tipos_user[id_tipo_de_usuario].'">'.$tipos_user[tipo_de_usuario].'</option>';
-          }
-        ?>
-      </select>
-          <button type="submit" class="btn btn-success">Ver</button>
-        </form>
-        </div>
-      </div>
-
+  <div id="contenido">
+  <?php include'navbar.php'; ?>
+  <h1 align="center">Tipos de usuario</h1>
+    <div style="margin: auto; width: 250px; border-collapse: separate; border-spacing: 5px 5px;">
+      <form class="col-sm-12">
+        <label>Seleccione tipo de usuario:</label>
+        <select class="form-control" name="tipo_user">
+          <option value="0">Tipos de usuario:</option>
+          <div class="caja">
+          <?php
+            $query = $mysqli -> query ("SELECT * FROM tipo_de_usuario");
+            while ($tipos_user = mysqli_fetch_array($query)) {
+              echo '<option value="'.$tipos_user[id_tipo_de_usuario].'">'.$tipos_user[tipo_de_usuario].'</option>';
+            }
+          ?>
+        </select>
+        <button type="submit" class="btn btn-success btn-us">Ver</button>
+      </form>
     </div>
-    <table class="table-striped table-bordered tabla">
-      <thead>
-        <tr>
-          <th class="tabla">
-            Id Usuario
-          </th>
-          <th class="tabla">
-            Matricula
-          </th>
-          <th class="tabla">
-            Nombre
-          </th>
-           <th class="tabla">
-            Apellido
-          </th>
-          <th class="tabla">
-            Correo
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-         <?php
+    <div class="row col-sm-12">
+      <table class="table-striped table-bordered tabla">
+        <thead>
+          <tr>
+            <th class="tabla">
+              Id Usuario
+            </th>
+            <th class="tabla">
+              Matricula
+            </th>
+            <th class="tabla">
+              Nombre
+            </th>
+             <th class="tabla">
+              Apellido
+            </th>
+            <th class="tabla">
+              Correo
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+           <?php
 
-         if (isset($_GET["tipo_user"])){
-          $tipo= $_GET["tipo_user"];
+           if (isset($_GET["tipo_user"])){
+            $tipo= $_GET["tipo_user"];
 
-          $query = $mysqli -> query ("SELECT * FROM usuarios WHERE id_tipo_de_usuario=".$tipo);
-          while ($usuarios = mysqli_fetch_array($query)) {
-            echo"<tr>
-            <td class='tabla'>".$usuarios[0]."</td>
-            <td class='tabla'>".$usuarios[5]."
-            <td class='tabla'>".$usuarios[1]."
-            <td class='tabla'>".$usuarios[2]."
-            </td><td class='tabla'>".$usuarios[3]."</td></tr>";
+            $query = $mysqli -> query ("SELECT * FROM usuarios WHERE id_tipo_de_usuario=".$tipo);
+            while ($usuarios = mysqli_fetch_array($query)) {
+              echo"<tr>
+              <td class='tabla'>".$usuarios[0]."</td>
+              <td class='tabla'>".$usuarios[5]."
+              <td class='tabla'>".$usuarios[1]."
+              <td class='tabla'>".$usuarios[2]."
+              </td><td class='tabla'>".$usuarios[3]."</td></tr>";
+        }
       }
-    }
-        ?>
+          ?>
 
 
-      </tbody>
-
+        </tbody>
+      </div>
+    </div>
   </body>
 </html>
