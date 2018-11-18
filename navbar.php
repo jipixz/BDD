@@ -20,9 +20,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navegacion">
       <ul class="nav navbar-nav left mr-auto">
-        <li><a href="filtrar_reservas.php" class="text">Reservas</a></li>
+        <li class="nav-item dropdown">
+          <a class="text nav-link dropdown-toggle"  href="/menu.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservas</a>
+          <!--<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
+          <div class="dropdown-menu dropdown-content" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="menu.php">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
         <li><a href="materias.php" class="text">Asignaturas</a></li>
-        <li><a href="select_tipo_de_usuario.php" class="text">Usuarios</a></li>
+        <li><a href="usuarios.php" class="text">Usuarios</a></li>
         <li><a href="laboratorios.php" class="text">Laboratorios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right right mr-auto">
@@ -35,8 +43,8 @@
   <hr class="divider debajo">
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

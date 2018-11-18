@@ -44,3 +44,8 @@ th, td{
 .btn-us{
     margin-top: 1rem;
 }
+
+.col-centered{
+    float: none;
+    margin: auto;
+}
