@@ -47,7 +47,7 @@
       <?php include'navbar.php'; ?>
     <div style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
     <span> <h2>Modificar Laboratorio</h2> </span>
-    <form class="col-sm-4" action="editar_laboratorio2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
+    <form class="col-sm-4" action="laboratorio_editar2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
       <div class="form-group">
         <label>ID Laboratorio:</label>
         <input type="text" name="id_laboratorio" id="id_laboratorio" class="form-control" readonly="readonly" value="<?php echo $consulta[0]; ?>">

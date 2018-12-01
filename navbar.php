@@ -20,15 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navegacion">
       <ul class="nav navbar-nav left mr-auto">
-        <li class="nav-item dropdown">
-          <a class="text nav-link dropdown-toggle"  href="/menu.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservas</a>
-          <!--<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
-          <div class="dropdown-menu dropdown-content" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="menu.php">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+        <li><a href="menu.php" class="text">Reservas</a></li>
         <li><a href="materias.php" class="text">Asignaturas</a></li>
         <li><a href="usuarios.php" class="text">Usuarios</a></li>
         <li><a href="laboratorios.php" class="text">Laboratorios</a></li>

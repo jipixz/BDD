@@ -36,7 +36,7 @@
   			<th class="tabla">Nombre</th>
   			<th class="tabla">Responsable</th>
 				<th class="tabla"></th>
-  			<th class="tabla"> <a href="añadir_laboratorio.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
+  			<th class="tabla"> <a href="laboratorio_nuevo.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
   		</thead>
 
       <?php
@@ -50,8 +50,8 @@
 	          echo "<td class='tabla'>"; echo $filas['id_laboratorio']; echo "</td>";
 	          echo "<td class='tabla'>"; echo $filas['laboratorio']; echo "</td>";
 	          echo "<td class='tabla'>"; echo $filas['responsable_laboratorio']; echo "</td>";
-	          echo "<td class='tabla'>  <a href='editar_laboratorio.php?lab=".$filas['id_laboratorio']."'> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>";
-	          echo "<td class='tabla'> <a href='eliminar_laboratorio.php?lab=".$filas['id_laboratorio']."''><button type='button' class='btn btn-danger'>Eliminar</button></a> </td>";
+	          echo "<td class='tabla'>  <a href='laboratorio_editar.php?lab=".$filas['id_laboratorio']."'> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>";
+	          echo "<td class='tabla'> <a href='laboratorio_eliminar.php?lab=".$filas['id_laboratorio']."''><button type='button' class='btn btn-danger'>Eliminar</button></a> </td>";
 						echo "<td class='tabla'> <a href='ver_reservas.php?lab=".$filas['id_laboratorio']."''><button type='button' class='btn btn-flat-green'>Ver Reservas</button></a> </td>";
 	        echo "</tr>";
 	      }

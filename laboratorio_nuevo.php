@@ -30,7 +30,7 @@
         <span>
           <h1>Añadir Laboratorio</h1>
         </span>
-        <form class="col-sm-4" action="añadir_laboratorio2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
+        <form class="col-sm-4" action="laboratorio_nuevo2.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;">
           <div class="form-group">
             <label>Laboratorio:</label>
             <input type="text" name="laboratorio" id="laboratorio" class="form-control" required>
